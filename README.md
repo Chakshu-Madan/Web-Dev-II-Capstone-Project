@@ -6,7 +6,7 @@ A modern, full-featured fashion e-commerce web application built with React, Red
 
 ## 🌐 Live Demo
 
-🔗 [[View Live on Vercel](https://style-hub-ebon.vercel.app/)](#) 
+🔗 [https://style-hub-ebon.vercel.app/](#) 
 
 ---
 
