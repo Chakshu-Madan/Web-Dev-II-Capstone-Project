@@ -157,7 +157,7 @@ This project uses [FakeStoreAPI](https://fakestoreapi.com/) — a free REST API 
 ## 👨‍💻 Author
 
 **Your Name**
-- GitHub: [@Chakshu-Madan)][(https://github.com/Chakshu-Madan)]
+- GitHub: [@Chakshu-Madan][(https://github.com/Chakshu-Madan)]
 
 ---
 
