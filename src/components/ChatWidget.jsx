@@ -56,6 +56,17 @@ export default function ChatWidget() {
     }
   };
 
+  const handleToggle = () => {
+    const opening = !isOpen;
+    setIsOpen(opening);
+    if (opening && messages.length === 0) {
+      setMessages([{
+        role: 'bot',
+        text: "Hi there! 👋 I'm your support assistant. Ask me anything about our services, pricing, or products."
+      }]);
+    }
+  };
+
   const handleKey = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
@@ -65,7 +76,7 @@ export default function ChatWidget() {
 
   return (
     <>
-      <button id="chat-toggle" onClick={() => setIsOpen(!isOpen)}>💬</button>
+      <button id="chat-toggle" onClick={handleToggle}>💬</button>
       <div id="chat-window" className={isOpen ? 'open' : ''}>
         <div className="chat-header">
           <div className="bot-avatar">🤖</div>
