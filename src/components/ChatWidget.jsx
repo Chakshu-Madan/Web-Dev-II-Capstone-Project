@@ -30,7 +30,7 @@ export default function ChatWidget() {
     setIsTyping(true);
 
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 35000);
+    const timeoutId = setTimeout(() => controller.abort(), 55000);
 
     try {
       const res = await fetch(`${API_BASE}/chat`, {
