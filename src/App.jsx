@@ -9,9 +9,11 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/admin/Dashboard'
 import ManageProducts from './pages/admin/ManageProducts'
+import ChatWidget from './components/ChatWidget';
 
 function App() {
   return (
+    <>
     <BrowserRouter>
       <Navbar />
       <Routes>
@@ -35,7 +37,9 @@ function App() {
         } />
       </Routes>
     </BrowserRouter>
-  )
+      <ChatWidget />
+    </>
+  );
 }
 
 export default App
