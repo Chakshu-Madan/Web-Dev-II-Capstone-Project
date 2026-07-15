@@ -30,7 +30,7 @@ export default function ChatWidget() {
     setIsTyping(true);
 
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 55000);
+    const timeoutId = setTimeout(() => controller.abort(), 35000);
 
     try {
       const res = await fetch(`${API_BASE}/chat`, {
@@ -41,11 +41,16 @@ export default function ChatWidget() {
       });
       clearTimeout(timeoutId);
       const data = await res.json();
-      setMessages(prev => [...prev, {
-        role: 'bot',
-        text: data.answer || 'Sorry, no answer found.',
-        sources: data.sources || []
-      }]);
+
+      if (!res.ok) {
+        setMessages(prev => [...prev, { role: 'bot', text: data.error || 'Something went wrong. Please try again.' }]);
+      } else {
+        setMessages(prev => [...prev, {
+          role: 'bot',
+          text: data.answer || 'Sorry, no answer found.',
+          sources: data.sources || []
+        }]);
+      }
     } catch (e) {
       clearTimeout(timeoutId);
       const errText = e.name === 'AbortError' ? 'That took too long — please try again.' : 'Connection error.';
